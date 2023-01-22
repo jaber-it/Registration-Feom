@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reg From </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="path/to/sweetalert2.min.css">
+
+</head>
+
+<body>
+    <div class="full-reg-body">
+        <div class="container-reg-from">
+            <form id="register-form">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full Name</span> <input id="name" name="name" type="text">
+                    </div>
+                    <!-- <label class="input-box"> Name:</label>
+        <input type="text" id="name" name="name"><br>  -->
+                    <div class="input-box">
+                        <span class="details">Email</span> <input id="email" name="email" required="" type="email">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone</span> <input id="phone" name="phone" required="" type="number">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Username</span> <input id="username" name="username" required="" type="username">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Gender</span>
+                        <select class="custom-select" id="gender" name="gender" type="gender">
+                            <option value="0">Select Gender:</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span> <input id="password" name="password" required="" type="password">
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" onclick="post_api_Data();" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script>
+        var form = document.getElementById("register-form");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var phone = document.getElementById("phone").value;
+            var username = document.getElementById("username").value;
+            var gender = document.getElementById("gender").value;
+        //	var url = {https://apex.oracle.com/pls/apex/my_stock/MY_USER_DATA/insert?PHONE_NUMBER=phone&EMAIL_ADDRESS=email&USERNAME=username&PASSWORD=password&FULL_NAME=name};
+           var data = { FULL_NAME: name, EMAIL_ADDRESS: email, PASSWORD: password, PHONE_NUMBER: phone, USERNAME: username, GENDER: gender };
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://apex.oracle.com/pls/apex/my_stock/MY_USER_DATA/insert", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function() {
+              /*  
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(xhr.responseText);
+                }
+            };
+            */
+            if (xhr.readyState === 4) {
+              if (xhr.status === 200) {
+                var response = xhr.responseText;
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Registration Successfully'
+                })
+              } else {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'There was an error with your request. Please try again.'
+                })
+              }
+            }
+          };
+          xhr.onerror = function() {
+            Swal.fire({
+              title: 'Error',
+              text: 'There was an error with your request. Please try again.',
+              icon: 'error'
+            })};
+            xhr.send(JSON.stringify(data));
+        });
+        
+            </script>
+</body>
+
+</html>
