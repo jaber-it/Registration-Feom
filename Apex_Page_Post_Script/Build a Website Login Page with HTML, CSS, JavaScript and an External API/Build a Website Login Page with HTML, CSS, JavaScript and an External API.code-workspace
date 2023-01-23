@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../CRUD Website with HTML, CSS, JavaScript and an External API"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "CRUD Website with HTML, CSS, JavaScript and an External API"
+	}
+}
