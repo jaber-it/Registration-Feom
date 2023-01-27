@@ -1,8 +1,8 @@
 # Get Api User Data
 
- Read All USER Data Use Oracle Apex REST GET Api
- User Data Update, Use Oracle Apex REST POST Api
- User Data DELETE, Use Oracle Apex REST DELETE Api
+ Read All USER Data Use Oracle Apex REST GET Api </br>
+ User Data Update, Use Oracle Apex REST POST Api </br>
+ User Data DELETE, Use Oracle Apex REST DELETE Api </br>
 Insert New User, Use Oracle Apex REST DELETE Api
 
 
