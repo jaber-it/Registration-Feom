@@ -20,7 +20,7 @@
   background: rgba(255, 255, 255, 0.7);
   z-index: 999;
   display: none;
-}
+} 
 
 #loading-icon {
   position: absolute;
