@@ -1,0 +1,36 @@
+<div id="myModal" class="modal">
+    <div class="modal-content animate">
+        <div class="full-reg-body">
+            <div class="container-reg-from">
+                <form id="register-form">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">User Id</span> <input type="text" id="idInput" disabled>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">First Name:</span> <input type="text" id="fnameInput">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Last Name:</span> <input type="text" id="lnameInput">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Username</span> <input type="text" id="usernameInput">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Img URL</span> <input type="text" id="avatarInput">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Password</span> <input type="password" id="passwordInput">
+                        </div>
+
+                        <div class="buttondiv">
+                            <button type="button" onclick="document.getElementById('myModal').style.display='none'"
+                                class="button">Cancel</button>
+                            <button type="button" onclick="updateUser();" class="button">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
