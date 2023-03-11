@@ -35,8 +35,10 @@ loadTable();
 function showUserCreateBox() {
  // window.open('Reg_from.html', '_blank', 'toolbar=0,location=0,menubar=0');
   //window.open('./Reg_from.html','_blank');
-  window.open("./Reg_from.html","_blank","toolbar=yes,scrollbars=yes, resizable=yes, top=500, left=500, width=600, height=600");
- //window.location.href = './Reg_from.html', target='_blank';
+  window.location.href = '././Reg_from.html';
+ // window.location.href("./Reg_from.html","toolbar=yes,scrollbars=yes, resizable=yes, top=500, left=500, width=600, height=600");
+ // window.location.href = './Reg_from.html', target='_blank';
+ // window.open("./Reg_from.html","_blank","toolbar=yes,scrollbars=yes, resizable=yes, top=500, left=500, width=600, height=600");
   /*
   Swal.fire({
     title: 'Create user',
